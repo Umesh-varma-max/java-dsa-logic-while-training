@@ -1,6 +1,5 @@
 
 import java.util.Scanner;
-import javax.naming.NamingException;
 
 public class balanced {
     public static void main(String[] args) {
@@ -75,7 +74,7 @@ public class balanced {
         
         
         }
-    }
+    
 
 
     
