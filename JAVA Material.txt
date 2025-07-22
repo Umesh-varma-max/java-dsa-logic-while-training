@@ -1,0 +1,1435 @@
+father of java: James Ghosling
+java logo: coffee cup
+first name of java: OAK 
+java: island
+Initial purpose: to control remote sensor devices
+Introdued: Sun Micro Systems, 1995
+Owned: Oracle 
+
+J2SE-- CORE JAVA ----desktop applications
+J2EE-- ADVANCED JAVA---- Web applications, Business applications
+J2ME-- MOBILE EDITION---- mobile applications 
+
+class Hello 
+{
+	public static void main(String args[ ]) 
+        {  
+		System.out.println("Hello world");
+	}
+}
+
+class: it is keyword, used to define a class.
+Hello: it is a Class name.
+public: it is an access modifier and it shows visibilty.
+static: objectless.
+	static data ----- accessed using class name
+	normal data ---- accessed using object name
+void: empty data type.
+main(): it is a method, starts the execution and called by JVM.
+String args[ ]: command line arguments. And first command always file name.
+System: it is class, present java.lang package.
+out: it is an object of which PrintStream class.
+println(): it is a method of PrintStream class and used to print output on screen.
+
+#
+public class Hello {
+   public static void main(String[] args) {
+      	System.out.println(10+"10");  
+	System.out.println(10+10);  
+	System.out.println("10"+"10");  
+   }
+}
+
+#
+public class Hello {
+   public static void main(String[] args) {
+      System.out.println("Good");  
+   }
+   public static void main(String args) {
+      System.out.println("Hello");  
+   }
+}
+
+Note: is simlar to main method and called by JVM
+public static void main(String... args) {
+    	System.out.println("Varargs - also valid as entry point");
+   }
+
+
+Variables: 
+
+Variable Declaration:   int a,b,c;
+
+Variable Initialization:  int a=10,b=20,c=30;
+
+C data types: int, char, float, double, long double
+                      10    'A'     3.56    4.56      5.56
+
+Java Data types: byte, short, int, long, float, double, char, boolean
+
+__=10
+___=20
+____=__+___
+S.o.p(____)
+
+//  Variables example program
+public class Hello {
+   int a=10; // instance variable
+   static int b=20; // static variable
+   public static void main(String[] args) {
+      int x=100; // local variable
+      Hello ob=new Hello(); 
+      System.out.println(ob.a);  // instance variable accessed using object
+      System.out.println(Hello.b); //static variable accessed using class name
+      System.out.println(x);
+   }
+}
+
+public class Hello1 {
+   int x=20;
+   static int y=30;
+   public static void main(String[] args) {
+      int z=50;
+      Hello1 ob=new Hello1();
+      System.out.println(ob.x+Hello1.y+z);
+   }
+}
+
+
+//BufferedReader Example
+import java.io.*;
+public class Addition {
+   public static void main(String[] args) throws Exception{
+      InputStreamReader isr=new InputStreamReader(System.in);
+      BufferedReader br= new BufferedReader(isr);
+      System.out.print("Enter first number: ");
+      String s1=br.readLine();
+      int x=Integer.parseInt(s1);
+      System.out.print("Enter Second number: ");
+      String s2=br.readLine();
+      int y=Integer.parseInt(s2);
+      System.out.println("Sum="+(x+y));
+   }
+}
+
+//Scanner Class
+import java.util.Scanner;
+public class Scan1 {
+   public static void main(String[] args) {
+      Scanner ob= new Scanner(System.in);
+      System.out.print("Enter name: ");
+      String name=ob.nextLine();
+      System.out.print("Enter Roll number: ");
+      int rollno=ob.nextInt();
+      System.out.print("Enter marks: ");
+      double marks=ob.nextDouble();
+      System.out.println("Name: "+name+" Roll number: "+rollno
+                                                           +" Marks: "+marks);
+   }
+}
+
+// Volume of rectangle
+import java.util.Scanner;
+public class Volume {
+   public static void main(String[] args) {
+      Scanner ob=new Scanner(System.in);
+      System.out.print("Enter l,b,h values: ");
+      double l=ob.nextDouble();
+      double b=ob.nextDouble();
+      double h=ob.nextDouble();
+      double vol=l*b*h;
+      System.out.println("Volume of rectangle: "+vol);
+   }
+}
+
+
+Operators:
+
+Arithmetic: +, -, *, /, %, ++, --
+Relational: >,<,>=,<=,==,!=
+Logical: &&, ||, !
+Assignment: =, +=, -=,*=, /=
+Bit-wise: &, |, ~, <<, >>
+Conditional :
+instanceOf
+
+Arithmetic:
+
+// Separate digits from the number.
+import java.util.*;
+public class Num1 {
+   public static void main(String[] args) {
+      Scanner ob=new Scanner(System.in);
+      System.out.print("Enter n value: ");
+      int n=ob.nextInt();
+      System.out.println(n%10);
+      System.out.println((n/10)%10);
+      System.out.println((n/100)%10);
+      System.out.println((n/1000)%10);
+   }
+}
+
+//Days conversion
+import java.util.Scanner;
+public class Days {
+   public static void main(String[ ] args) {
+      Scanner ob= new Scanner(System.in);
+      System.out.print("Enter no.of days: ");
+      int d=ob.nextInt();
+      int y=d/365;
+      d=d-(y*365);
+      int m=d/30;
+      d=d-(m*30);
+      int w=d/7;
+      d=d-(w*7);
+      System.out.print(y+"Years "+m+"Months "+w+"Weeks "+d+"Days");
+   }
+}
+// Seconds conversion
+import java.util.*;
+public class Seconds {
+   public static void main(String args[ ]) {
+      Scanner ob=new Scanner(System.in);
+      System.out.print("Enter no.of seconds: ");
+      int s=ob.nextInt();
+      int h=s/3600;
+      s=s-(h*3600);
+      int m=s/60;
+      s=s-(m*60);
+      System.out.println(h+"hours "+m+"minutes "+s+"seconds");
+   }
+}
+
+System.in --- input
+System.out --- output
+System.err ----Error message
+
+// Bitwise operators
+public class Bitwise {
+   public static void main(String[] args) {
+      int a=5,b=6;
+      System.out.println(a&b); //4
+      System.out.println(a|b); // 7
+      System.out.println(~a); // -6
+      System.out.println(a<<2);//  20
+      System.out.println(a>>2);//  1
+      System.out.println(~b); //  -7
+      System.out.println(b<<2); //  24
+      System.out.println(b>>2); // 1
+      System.out.println(~(-7)); // 6
+   }
+}
+
+// instanceof operator.
+public class Instance {
+  	public static void main(String[] args) {
+    		String str = "Java Program";
+         Instance ob = new Instance();
+    		boolean result1,result2;
+    		// checks if str is an instance of the String class
+    		result1 = str instanceof String;
+         result2= ob instanceof Instance;
+    		System.out.println(result1);
+          System.out.println(result2);
+  	}
+}
+
+An ATM machine contains 500,200 and 100 rupee notes. It is distributing 
+notes in the following way.
+
+Input: 800
+output: 
+500 notes are: 1
+200 notes are: 1
+100 notes are: 1
+
+Input: 2000
+output: 
+500 notes are: 4
+
+Constraints: input must be multiples of 100's only.
+
+import java.util.Scanner;
+public class ATM {
+   public static void main(String[] args) {
+      Scanner ob=new Scanner(System.in);
+      System.out.print("Enter amount: "); //800
+      int amount=ob.nextInt();
+      if(amount%100==0)  
+      {
+         if(amount>=500) 
+         {
+            int f=amount/500;   
+            amount=amount-(500*f); 
+            System.out.println("500 notes are: "+f); 
+         }
+         if(amount>=200)   
+         {
+            int t=amount/200;  
+            amount=amount-(200*t); 
+            System.out.println("200 notes are: "+t); 
+         }
+         if(amount>=100) 
+         {
+            int h=amount/100;  
+            System.out.println("100 notes are: "+h); 
+         }
+      }
+      else {
+         System.out.println("Enter valid amount.");
+      }
+   }
+}
+
+Tax calculation:
+
+		Income  					Tax(%)
+===============       ==============
+	<=500000						0%
+	<=750000						10%
+	<=1000000						20%
+	>1000000						30%
+
+import java.util.Scanner;
+public class Tax {
+   public static void main(String[] args) {
+      double tax;
+      Scanner ob=new Scanner(System.in);
+      System.out.print("Enter your salary: ");
+      double salary=ob.nextDouble();
+      if(salary>0 && salary<=500000)
+         tax=0;
+      else if(salary>500000 && salary<=750000)
+         tax=(salary-500000)*0.1;
+      else if(salary>750000 && salary<=10000001)
+         tax=250000*0.1+(salary-750000)*0.2;
+      else 
+         tax=250000*0.1+250000*0.2+(salary-1000000)*0.3; 
+      
+      System.out.println("Your payable tax: "+tax);
+   }
+}
+
+ASCII:
+A-65   a=97    0=48
+Z-90   z=122  9=57
+// Uppercase to lowercase and vice versa.
+import java.util.*;
+public class Ascii2 {
+   public static void main(String[] args) {
+      Scanner ob=new Scanner(System.in);
+      System.out.print("Enter any letter: ");
+      char x=ob.next().charAt(0);
+      if(x>=65 && x<=97)  {
+         int y=(int)x+32; // y=97
+         System.out.println("Converted letter: "+(char)y);
+      }
+      else {
+         int y=(int)x-32;
+         System.out.println("Converted letter: "+(char)y);
+      }
+   }
+}
+
+
+import java.util.Scanner;
+public class Ascii3 {
+   public static void main(String[] args) {
+      Scanner ob=new Scanner(System.in);
+      System.out.print("Enter any character: ");
+      char ch=ob.next().charAt(0);
+      if((ch>=65 && ch<=90)||(ch>=97 && ch<=122))
+         System.out.println("You entered a letter.");
+      else if(ch>=48 && ch<=57)
+         System.out.println("You entered a digit.");
+      else
+         System.out.println("You entered a special symbol");
+   }
+}
+
+1.Addition
+2.Subtractoin
+3. Multiplication
+4.Division
+5.Moulus
+
+import java.util.*;
+public class Calculator {
+	public static void main(String arg[ ]) {
+		Scanner ob=new Scanner(System.in);
+		System.out.print("Enter first number: ");
+		int a=ob.nextInt();
+		System.out.print("Enter second number: ");
+		int b=ob.nextInt();
+		
+		System.out.println("1.Addition");
+		System.out.println("2.Subtraction");
+		System.out.println("3.Multiplication");
+		System.out.println("4.Division");
+		System.out.println("5.Modulus ");
+		
+		System.out.print("Enter your choice: ");
+		int choice=ob.nextInt();
+		
+		switch(choice)
+		{
+			case 1: System.out.print(a+b);
+						break;
+			case 2: System.out.print(a-b);
+						break;
+			case 3: System.out.print(a*b);
+						break;
+			case 4: System.out.print(a/b);
+						break;
+			case 5: System.out.print(a%b);
+						break;
+			default: System.out.print("Invalid input");
+						break;
+		}
+	}
+}
+
+import java.util.*;
+public class Calculator {
+	public static void main(String arg[ ]) {
+		Scanner ob=new Scanner(System.in);
+		System.out.print("Enter first number: ");
+		int a=ob.nextInt();
+		System.out.print("Enter second number: ");
+		int b=ob.nextInt();
+		
+		System.out.println("1.Addition");
+		System.out.println("2.Subtraction");
+		System.out.println("3.Multiplication");
+		System.out.println("4.Division");
+		System.out.println("5.Modulus ");
+		
+		System.out.print("Enter your choice: ");
+		char choice=ob.next().charAt(0);
+		
+		switch(choice)
+		{
+			case '+': System.out.print(a+b);
+						break;
+			case '-': System.out.print(a-b);
+						break;
+			case '*': System.out.print(a*b);
+						break;
+			case '/': System.out.print(a/b);
+						break;
+			case '%': System.out.print(a%b);
+						break;
+			default: System.out.print("Invalid input");
+						break;
+		}
+	}
+}
+
+Restaurant Bill:
+import java.util.*;
+public class Biryani {
+	public static void main(String args[ ]) {
+		Scanner ob=new Scanner(System.in);
+		
+		System.out.println("***Menu***");
+		System.out.println("1.Veg Biryani - 150");
+		System.out.println("2. Egg Biryani - 200");
+		System.out.println("3. Chicken Biryani - 250");
+		System.out.println("4. Mutton Biyani - 350");
+		
+		System.out.println("Enter your choice: ");
+		int x=ob.nextInt();
+		double bill=0, final_bill=0,ser=0,gst=0;
+        int n;
+		switch(x)
+		{
+			case 1: System.out.println("Choosen Veg biryani");
+						System.out.println("How many you want: ");
+						n=ob.nextInt();
+						bill=n*150;
+						if(n>=5)
+						{
+							System.out.println("Congrats, got a scratch card");
+							int sc=ob.nextInt();
+							if(sc==50)
+							{
+								System.out.println("Wow.. you got 50% discount");
+								bill=bill-(bill*0.5);
+							}
+							else
+								System.out.println("Sorry, no discount");
+						}
+                  break;
+				case 2: System.out.println("Choosen Egg biryani");
+						System.out.println("How many you want: ");
+						n=ob.nextInt();
+						bill=n*200;
+						if(n>=5)
+						{
+							System.out.println("Congrats, got a scratch card");
+							int sc=ob.nextInt();
+							if(sc==50)
+							{
+								System.out.println("Wow.. you got 50% discount");
+								bill=bill-(bill*0.5);
+							}
+							else
+								System.out.println("Sorry, no discount");
+						}
+                  break;
+					case 3: System.out.println("Choosen Chicken biryani");
+						System.out.println("How many you want: ");
+						n=ob.nextInt();
+						bill=n*250;
+						if(n>=5)
+						{
+							System.out.println("Congrats, got a scratch card");
+							int sc=ob.nextInt();
+							if(sc==50)
+							{
+								System.out.println("Wow.. you got 50% discount");
+								bill=bill-(bill*0.5);
+							}
+							else
+								System.out.println("Sorry, no discount");
+						}
+                  break;
+					case 4: System.out.println("Choosen Mutton biryani");
+						System.out.println("How many you want: ");
+						n=ob.nextInt();
+						bill=n*350;
+						if(n>=5)
+						{
+							System.out.println("Congrats, got a scratch card");
+							int sc=ob.nextInt();
+							if(sc==50)
+							{
+								System.out.println("Wow.. you got 50% discount");
+								bill=bill-(bill*0.5);
+							}
+							else
+								System.out.println("Sorry, no discount");
+						}
+                  break;
+				}
+		ser=bill*0.03;
+		gst=bill*0.05;
+		final_bill=bill+ser+gst;
+      System.out.println("Service charge: "+ser);
+      System.out.println("GST: "+gst);
+      System.out.println("Bill: "+bill);
+		System.out.println("your bill: "+final_bill);
+	}
+}
+
+Loop Statements:
+================
+while(condition)
+{
+	statements;
+}
+
+do
+{
+	statements;
+} while(condition);
+
+for(initialization;condition;increment/decrement)
+{
+	statements;
+}
+
+for( iteration_variable: Array-name)
+{
+	statements;
+}
+
+#program1: 1234
+// count no.of digits in the given number.
+
+1234%10=4
+1234/10=123
+count=0;
+while(num!=0)
+{
+	num=num/10;
+	count++;
+}
+
+loop1: n=1234, c=0
+while(1234!=0)
+{
+	n=1234/10=123
+	c=1
+}
+loop2: n=123,c=1
+while(123!=0)
+{
+	n=123/10=12
+	c=2
+}
+loop3: n=12,c=2
+while(12!=0)
+{
+	n=12/10=1
+	c=3
+}
+
+loop4: n=1,c=3
+while(1!=0)
+{
+	n=1/10=0
+	c=4
+}
+loop5: n=0, c=4
+while(0!=0) ---------false
+
+import java.util.*;
+public class Number1 {
+	public static void main(String args[ ]) {
+		Scanner ob=new Scanner(System.in);
+		System.out.print("Enter any number: ");
+		int n=ob.nextInt();
+		int count=0;
+		while(n!=0)
+		{
+			n=n/10;
+			count++;
+		}
+		System.out.println("No.of digits: "+count);
+	}
+}
+
+# program-2
+// count no.of even and odd digits in the given number.
+// 123456==> ed=3, od=3
+import java.util.*;
+public class Number2 {
+	public static void main(String args[ ]) {
+		Scanner ob=new Scanner(System.in);
+		System.out.print("Enter any number: ");
+		int n=ob.nextInt();
+		int digit,edc=0,odc=0;
+		while(n!=0)// 1!=0
+		{
+			digit=n%10; 
+         	if(digit%2==0) 
+            	edc++; 
+         	else 
+            	odc++;
+         n=n/10; 
+		}
+		System.out.println("Even digit count: "+edc);
+      System.out.println("Odd digit count: "+odc);
+	}
+}
+
+#program-3
+// Largest digit in a given number.
+// n=1725 ===> largest digit=7
+import java.util.Scanner;
+public class Number3 {
+   public static void main(String[] args) {
+      Scanner ob=new Scanner(System.in);
+      System.out.print("Enter any number: ");
+      int n=ob.nextInt();
+      int largest=Integer.MIN_VALUE, digit;
+      while(n!=0)
+      {
+         digit=n%10;
+         if(largest<digit)
+         {
+            largest=digit;
+         }
+         n=n/10;
+      }
+      System.out.println("Largest digit: "+largest);
+      System.out.println(Integer.MIN_VALUE);
+      System.out.println(Integer.MAX_VALUE);
+   }
+}
+#program-4
+// sum of smallest and largest digits.
+import java.util.Scanner;
+public class Number4 {
+   public static void main(String[] args) {
+      Scanner ob=new Scanner(System.in);
+      System.out.print("Enter any number: ");
+      int n=ob.nextInt();
+      int largest=Integer.MIN_VALUE;
+      int smallest=Integer.MAX_VALUE;
+      int digit;
+      while(n!=0)
+      {
+         digit=n%10;
+         if(largest<digit)
+         {
+            largest=digit;
+         }
+         if(smallest>digit)
+         {
+            smallest=digit;
+         }
+         n=n/10;
+      }
+      System.out.println("Largest digit: "+largest);
+      System.out.println("Smallest digit: "+smallest);
+      System.out.println(largest+smallest);
+   }
+}
+#program-5
+// 1234=1^1+2^2+3^3+4^4=
+// 5237= 5^1+2^2+3^3+7^4=
+import java.util.Scanner;
+import java.lang.Math;
+public class Number5 {
+   public static void main(String[] args) {
+      Scanner ob=new Scanner(System.in);
+      System.out.println("Enter any number: ");
+      int n=ob.nextInt();
+      int n1=n;
+      int count=0, digit,sum=0;
+      while(n!=0)
+      {
+         n=n/10;
+         count++;
+      }
+      while(n1!=0)
+      {
+         digit=n1%10;
+         sum=sum+(int)Math.pow(digit,count);
+         n1=n1/10;
+         count--;
+      }
+      System.out.println(sum);
+   }
+}
+//Disarium numbers in the given range.
+import java.util.*;
+import java.lang.*;
+public class Number6 {
+   public static void main(String[] args) {
+      Scanner ob=new Scanner(System.in);
+      System.out.print("Enter start value: ");
+      int start=ob.nextInt();
+      System.out.print("Enter end value: ");
+      int end=ob.nextInt();
+      for(int i=start;i<=end;i++)
+      {
+         int n=i,count=0,n1=i,n2=i;
+         while(n!=0)
+         {
+            n=n/10;
+            count++;
+         }
+         int digit,sum=0;
+         while(n1!=0)
+         {
+            digit=n1%10;
+            sum=sum+(int)Math.pow(digit,count);
+            n1=n1/10;
+            count--;
+         }
+         if(n2==sum)
+            System.out.print(n2+" ");
+      }
+   }
+}
+
+import java.util.Scanner;
+public class Number7 {
+   public static void main(String[] args) {
+      Scanner ob=new Scanner(System.in);
+      System.out.print("Enter no.of rows:");
+      int n=ob.nextInt();
+      for(int i=1;i<=n;i++)
+      {
+         for(int j=1;j<=i;j++)
+         {
+            System.out.print(" "+(char)(j+64));
+         }
+         System.out.println("");
+      }
+   }
+
+import java.util.Scanner;
+
+public class Number8 {
+   public static void main(String[] args) {
+      Scanner ob=new Scanner(System.in);
+      System.out.print("Enter no.of rows:");
+      int n=ob.nextInt();
+      for(int i=1;i<=n;i++)
+      {
+         for(int j=1;j<=i;j++)
+         {
+            if(j==1 || i==n || i==j)
+               System.out.print("*");
+            else 
+               System.out.print(" ");
+         }
+         System.out.println("");
+      }
+   }
+}
+
+}
+
+Arrays: 
+- Collection of elements belongs to same data type.
+- Elements stored in sequential order.
+- Elements are stored and accessed by using index or subscript.
+- The starting index is always 0 and ending is n-1, if it contains 'n' elements.
+- The main use of arrays to store multiple values.
+Example: Student of same branch, Electronics shop, etc...
+
+Types:
+a) 1-D arrays-- search,insert,delete,sort
+b) 2-D arrays-- matrices
+
+Array Input in Java:
+1. Using Scanner (Standard Way)
+    import java.util.Scanner;
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();          // Size of the array
+    int[] arr = new int[n];
+    for (int i = 0; i < n; i++) {
+        arr[i] = sc.nextInt();
+    }
+
+Array Printing in Java:
+1. Printing 1-D Array using for loop
+    for (int i = 0; i < arr.length; i++) {
+        System.out.print(arr[i] + " ");
+    }
+
+2. Printing 1-D Array using for-each loop
+    for (int value : arr) {
+        System.out.print(value + " ");
+    }
+
+3. Printing 1-D Array using Arrays.toString()
+    import java.util.Arrays;
+    System.out.println(Arrays.toString(arr)); 
+
+Arrays----> java.util.*;
+
+import java.util.Arrays;
+public class Array1 {
+   public static void main(String[] args) {
+      int a[ ]={11,12,13,14,15};
+      System.out.println(a.length); // gives length of array
+      for(int i=0;i<a.length;i++) // using for loop
+      {
+         System.out.print(a[i]+" ");
+      }
+      System.out.println("");
+      for(int i:a) // using for-each
+      {
+         System.out.print(i+" ");
+      }
+      System.out.println("");
+      System.out.println(Arrays.toString(a)); // using toString() method
+   }
+}
+
+import java.util.*;
+public class Array2 {
+	public static void main(String args[ ]) {
+		Scanner ob=new Scanner(System.in);
+		System.out.print("Enter array size: ");
+		int size=ob.nextInt();
+		
+		int a[ ]=new int[size];
+		
+		System.out.print("enter your elements: ");
+		for(int i=0;i<a.length;i++)
+		{
+			a[i]=ob.nextInt();
+		}
+		System.out.println(Arrays.toString(a));
+      int esum=0,osum=0;
+      for(int i=0;i<a.length;i++)
+      {
+         if(i%2==0)
+            esum=esum+a[i];
+         else 
+            osum=osum+a[i];
+      }
+      System.out.println("Even sum: "+esum);
+      System.out.println("Odd sum: "+osum);
+	}
+}
+
+import java.util.*;
+public class Array33 {
+	public static void main(String args[ ]) {
+		Scanner ob=new Scanner(System.in);
+		System.out.print("Enter array size: ");
+		int size=ob.nextInt();
+		int a[ ]=new int[size];
+		System.out.print("enter your elements: ");
+		for(int i=0;i<a.length;i++)
+		{
+			a[i]=ob.nextInt();
+		}
+		System.out.println(Arrays.toString(a));
+	  System.out.println("Enter your search element: ");
+	  int key = ob.nextInt();
+		int temp=0,pos=0;
+      for(int i=0;i<a.length;i++)
+      {
+         if(a[i]==key)
+				temp=1;
+				pos=i-1;
+      }
+		if(temp==1)
+			System.out.println("Element found at index: "+pos);
+		else
+			System.out.println("Element not found");
+	}
+}
+
+
+import java.util.Arrays;
+public class Matrix1 {
+   public static void main(String[ ] args) {
+      int a[ ][ ]={{1,2,3},{4,5,6},{7,8,9}};
+      for(int i=0;i<a.length;i++) // using for loop
+      {
+         for(int j=0;j<a.length;j++)
+         {
+            System.out.print(a[i][j]+" ");
+         }
+         System.out.println();
+      }
+      System.out.println();
+      for(int i=0;i<a.length;i++) // using for-each
+      {
+         for(int j:a[i])
+         {
+            System.out.print(j+" ");
+         }
+         System.out.println();
+      }
+      System.out.println();
+      System.out.println(Arrays.deepToString(a));
+   }
+}
+
+
+Arrays Class: The Arrays class provides utility methods for working with arrays like sorting, searching, comparing, and printing.
+-------------
+
+Method				Description
+------------------------------------------------------------------------------------------
+sort(array)			Sorts the array in ascending order.
+toString(array)			Returns a string representation of the array.
+equals(array1, array2)		Checks if two arrays have the same elements.
+copyOf(array, newLength)	Creates a new array with a specified length.
+copyOfRange(array, from, to)	Copies a specific range of elements to a new array.
+fill(array, value)		Fills the entire array with the given value.
+binarySearch(array, key)	Searches for a value in a sorted array using binary search.
+asList(array)			Converts an array to a fixed-size List.
+deepEquals(arr1, arr2)		Compares nested (multidimensional) arrays for equality.
+
+
+import java.util.Arrays;
+import java.util.List;
+public class Main  {
+    public static void main(String[] args) {
+        // 1. sort()
+        int[] numbers = {5, 2, 8, 1};
+        Arrays.sort(numbers);
+        System.out.println("Sorted: " + Arrays.toString(numbers));
+
+        // 2. toString()
+        System.out.println("Array as String: " + Arrays.toString(numbers));
+
+        // 3. equals()
+        int[] numbers2 = {1, 2, 5, 8};
+        System.out.println("Arrays equal: " + Arrays.equals(numbers, numbers2));
+
+        // 4. copyOf()
+        int[] copy = Arrays.copyOf(numbers, 6);
+        System.out.println("Copy with length 6: " + Arrays.toString(copy));
+
+        // 5. copyOfRange()
+        int[] rangeCopy = Arrays.copyOfRange(numbers, 1, 3); // elements at index 1 and 2
+        System.out.println("Range Copy (1 to 2): " + Arrays.toString(rangeCopy));
+
+        // 6. fill()
+        int[] filled = new int[4];
+        Arrays.fill(filled, 9);
+        System.out.println("Filled array: " + Arrays.toString(filled));
+
+        // 7. binarySearch()
+        int index = Arrays.binarySearch(numbers, 5);
+        System.out.println("Index of 5: " + index);
+
+        // 8. deepEquals()
+        int[][] nested1 = {{1, 2}, {3, 4}};
+        int[][] nested2 = {{1, 2}, {3, 4}};
+        System.out.println("Deep equals: " + Arrays.deepEquals(nested1, nested2));
+    }
+}
+
+
+2D ARRYAS:
+===========================
+INPUT:
+---------
+public class Matrix {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int rows = sc.nextInt();
+        int cols = sc.nextInt();
+        int[][] matrix = new int[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+    }
+}
+
+OUTPUT:
+
+Standard method:
+----------------
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println(); 
+        }
+
+Using for each loop:
+--------------------
+for (int[] row : matrix) {
+    for (int val : row) {
+        System.out.print(val + " ");
+    }
+    System.out.println();
+}
+
+
+Using toString:
+----------------
+for (int i = 0; i < matrix.length; i++) {
+    System.out.println(Arrays.toString(matrix[i]));
+}
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+//Sum of corner elements.
+public class Matrix2 {
+   public static void main(String[ ] args) {
+      Scanner ob=new Scanner(System.in);
+      System.out.print("Enter row and column sizes:");
+      int row=ob.nextInt();
+      int col=ob.nextInt();
+      int a[ ][ ]=new int[row][col];
+      System.out.print("Enter matrix elements: ");
+      for(int i=0;i<a.length;i++)
+      {
+         for(int j=0;j<a.length;j++)
+         {
+            a[i][j]=ob.nextInt();
+         }
+      }
+      for(int i=0;i<a.length;i++)
+      {
+         for(int j=0;j<a.length;j++)
+         {
+            System.out.print(a[i][j]+" ");
+         }
+         System.out.println();
+      }
+      
+      int sum=a[0][0]+a[0][col-1]+a[row-1][0]+a[row-1][col-1];
+      System.out.print("Sum of Corner elements: "+sum);
+   }
+}
+
+
+import java.util.*;
+public class Matrix3 {
+   public static void main(String[] args) {
+      Scanner ob=new Scanner(System.in);
+      System.out.print("Enter row and column sizes:");
+      int row=ob.nextInt();
+      int col=ob.nextInt();
+      int a[][]=new int[row][col];
+      int i,j;
+      System.out.print("Enter matrix elements: ");
+      for(i=0;i<row;i++)
+      {
+         for(j=0;j<col;j++)
+         {
+            a[i][j]=ob.nextInt();
+         }
+      }
+      int sum=0;
+      for(i=0;i<row;i++)
+      {
+         for(j=0;j<col;j++)
+         {
+            if(((i==0) && (j==0))||((i==0) && (j==col-1))|| 
+                       ((i==row-1) && (j==0))||((i==row-1) && (j==col-1)))
+            {
+               continue; // skips the current statement
+            }
+            else 
+            {
+               sum=sum+a[i][j];
+            }
+         }
+      }
+      System.out.print("Sum of othertan Corner elements: "+sum);
+   }
+}
+
+import java.util.*;
+public class Matrix4 {
+   public static void main(String[] args) {
+      Scanner ob=new Scanner(System.in);
+      System.out.print("Enter row and column sizes:");
+      int row=ob.nextInt();
+      int col=ob.nextInt();
+      int a[][]=new int[row][col];
+      int i,j;
+      System.out.print("Enter matrix elements: ");
+      for(i=0;i<row;i++)
+      {
+         for(j=0;j<col;j++)
+         {
+            a[i][j]=ob.nextInt();
+         }
+      }
+      int sum=0;
+      for(i=0;i<row;i++)
+      {
+         for(j=0;j<col;j++)
+         {
+            if((i==j) || (i+j==row-1))
+            {
+               sum=sum+a[i][j];
+            }
+         }
+      }
+      System.out.print("Sum of main & opposite diagonal elements: "+sum);
+   }
+}
+
+import java.util.*;
+public class Matrix5 {
+   public static void main(String[] args) {
+      Scanner ob=new Scanner(System.in);
+      System.out.print("Enter row and column sizes:");
+      int row=ob.nextInt();
+      int col=ob.nextInt();
+      int a[][]=new int[row][col];
+      int i,j;
+      System.out.print("Enter matrix elements: ");
+      for(i=0;i<row;i++)
+      {
+         for(j=0;j<col;j++)
+         {
+            a[i][j]=ob.nextInt();
+         }
+      }
+      int sum=0;
+      for(i=0;i<row;i++)
+      {
+         for(j=0;j<col;j++)
+         {
+            if((i==j) || (i+j==row-1))
+            {
+               continue;
+            }
+            else 
+            {
+               sum=sum+a[i][j];
+            }
+         }
+      }
+      System.out.print("Sum of otherthan diagonal elements: "+sum);
+   }
+}
+
+Strings in Java:
+----------------
+-->In Java, String is a class in the java.lang package.
+-->Strings are immutable, meaning once created, their values cannot be changed.
+--> Can be created
+	String str1 = "Ananth";            
+	String str2 = new String("MahaDev");
+--> String Input:
+	Scanner sc = new Scanner(System.in);
+	String word = sc.next();       // consumes the word
+	String line = sc.nextLine();   // consumes the leftover newline
+-->  String Output:
+	System.out.print("Hello");
+	System.out.print(word);
+	System.out.print(line);
+--> String Pool: The String Pool is a special place in memory where Java stores string literals to save space.
+Example:
+        String s1 = "Java";
+        String s2 = "Java";
+        String s3 = new String("Java");
+
+	s1 and s2 are the same object from the pool.
+	s3 is a new object, not in the pool.
+--> Immutability of Strings: Once a String object is created, it cannot be changed.
+Example 1:
+	String str = "Java";
+	str.concat(" Program");  -->Even though concat() is called, the original string str is unchanged.
+	System.out.println(str); ---> Output: Java
+Example 2:
+	str = str.concat(" Program");  --> Here, a new String object is created and assigned back to str.
+	System.out.println(str); --> Output: Java Program
+
+--> Strings Common Methods:
+	Method					Description
+-------------------------------------------------------------------------------------------------------
+length()				Returns the number of characters in the string.
+charAt(int index)			Returns the character at the given index.
+substring(int start)			Returns a substring from the given start index to end.
+substring(int start, int end)		Returns a substring between start and end indices.
+toLowerCase()				Converts all characters to lowercase.
+toUpperCase()				Converts all characters to uppercase.
+trim()					Removes leading and trailing spaces.
+equals(String another)			Checks if two strings are exactly equal.
+equalsIgnoreCase(String another)	Checks if two strings are equal, ignoring case.
+compareTo(String another)		Compares strings lexicographically (like dictionary order).
+contains(CharSequence s)		Checks if the string contains the given text.
+replace(char old, char new)		Replaces all old characters with new ones.
+split(String regex)			Splits the string into an array using a delimiter.
+indexOf(String s)			Returns the index of the first occurrence of a substring.
+lastIndexOf(String s)			Returns the index of the last occurrence of a substring.
+startsWith(String prefix)		Checks if the string begins with the given prefix.
+endsWith(String suffix)			Checks if the string ends with the given suffix.
+
+Example:
+public class StringMethodsExample {
+    public static void main(String[] args) {
+        String str = "Logic While";
+        String str2 = "logic while";
+
+        System.out.println("Original string: '" + str + "'");
+
+        System.out.println("length(): " + str.length());
+        System.out.println("charAt(1): " + str.charAt(1));
+        System.out.println("substring(2): '" + str.substring(2) + "'");
+        System.out.println("substring(2, 7): '" + str.substring(2, 7) + "'");
+        System.out.println("toLowerCase(): '" + str.toLowerCase() + "'");
+        System.out.println("toUpperCase(): '" + str.toUpperCase() + "'");
+        System.out.println("trim(): '" + str.trim() + "'");
+        System.out.println("equals(): " + str.equals(str2));
+        System.out.println("equalsIgnoreCase(): " + str.equalsIgnoreCase(str2));
+        System.out.println("compareTo(): " + str.compareTo(str2));
+        System.out.println("contains(\"While\"): " + str.contains("While"));
+        System.out.println("replace('i', '*'): '" + str.replace('i', '*') + "'");
+        
+        String[] parts = str.trim().split(" ");
+        System.out.println("split(\" \"): First word = '" + parts[0] + "', Second word = '" + parts[1] + "'");
+        
+        System.out.println("indexOf(\"i\"): " + str.indexOf("i"));
+        System.out.println("lastIndexOf(\"i\"): " + str.lastIndexOf("i"));
+        System.out.println("startsWith(\"Log\"): " + str.startsWith("Log"));
+        System.out.println("endsWith(\"ile\"): " + str.endsWith("ile"));
+    }
+}
+
+-->String Comparison
+1. == Operator
+2. equals() 
+3. equalsIgnoreCase() 
+4. compareTo() (Lexicographical Order)
+---> 1. == Operator: Checks if two string variables refer to the same object in memory.
+Example:
+	String a = "Ananth";
+	String b = "Ananth";
+	String c = new String("Ananth");
+	System.out.println(a == b); // true (both refer to same literal in pool)
+	System.out.println(a == c); // false (c is a new object)
+
+2. equals() : Checks if two strings have the same content (case-sensitive).
+Example:
+	String a = "Ananth";
+	String b = new String("Ananth");
+	System.out.println(a.equals(b)); // true
+
+3. equalsIgnoreCase(): Compares strings while ignoring case.
+Example:
+	String a = "ANANTH";
+	String b = new String("Ananth");
+	System.out.println(a.equals(b)); // true
+
+4. compareTo() (Lexicographical Order): 
+	Returns: 0 if strings are equal
+		 Positive if first is greater
+		 Negative if second is greater
+Example:
+	System.out.println("apple".compareTo("apple")); // 0
+	System.out.println("banana".compareTo("apple")); //  1
+	System.out.println("apple".compareTo("banana")); // -1
+
+--> String concatenation:  means joining two or more strings to make one combined string.
+1. Using the + Operator
+2. Using concat() Method
+
+1. Using the + Operator: The simplest and most common way.
+Example: 
+	String first = "Durga";
+	String second = "Nandika";
+	String result = first + second;
+	System.out.println(result);  
+
+2. Using concat() Method: This joins strings directly (works with one string at a time).
+Example:
+	String first = "Durga";
+	String second = "Nandika";
+	String result = first.concat(second);
+	System.out.println(result);  
+
+
+--> Converting Strings in Java
+1. toCharArray(): Converts a string into an array of characters.
+2. getBytes(): Converts a string into a byte array.
+3. Parsing Numbers from Strings: Integer.parseInt(), Double.parseDouble(), etc.
+
+Example:
+public class Main {
+    public static void main(String[] args) {
+        String str = "Java123";
+
+        // 1. To char array
+        char[] chars = str.toCharArray();
+        System.out.print("Characters: ");
+        for (char c : chars) {
+            System.out.print(c + " ");
+        }
+        System.out.println();
+
+        // 2. To byte array
+        byte[] bytes = str.getBytes();
+        System.out.print("Bytes: ");
+        for (byte b : bytes) {
+            System.out.print(b + " ");
+        }
+        System.out.println();
+
+        // 3. Parse integer
+        String numStr = "123";
+        int num = Integer.parseInt(numStr);
+        System.out.println("Parsed Integer: " + num);
+    }
+}
+
+--> String Join in Java:
+
+1. StringJoiner (Java 8+): Used to build a single string with a delimiter, and optional prefix and suffix.
+Example:
+import java.util.StringJoiner;
+public class Main {
+    public static void main(String[] args) {
+        StringJoiner sj = new StringJoiner(",");  // just with delimiter
+	StringJoiner sj = new StringJoiner(", ", "[", "]"); // along with prefix and suffix
+        sj.add("SubbaRao");
+        sj.add("Pravallika");
+        sj.add("Durga Nandika");
+	sj.add("Ananth MahaDev");
+        System.out.println("Using StringJoiner: " + sj);
+    }
+}
+2. String.join() (Java 8+)
+	Static method to join strings using a delimiter.
+	Works with arrays, lists, etc.
+Example:
+public class Main {
+    public static void main(String[] args) {
+        String result = String.join(" - ", "Red", "Green", "Blue");
+        System.out.println("Using String.join(): " + result);
+    }
+}
+
+
+StringBuilder Class in Java:
+----------------------------
+-->This class is used to create mutable strings — which means you can change the string (append, insert, delete) without creating a new object every time.
+ make it simple
+--> Regular String is immutable (cannot be changed).
+--> StringBuilder is faster for repeated string operations like inside loops.
+--> Common Methods:
+Method				Description
+-----------------------------------------------------------------------
+append(str)			Adds text at the end
+insert(pos, str)		Inserts text at a specific index
+delete(start, end)		Removes characters from start to end
+replace(start, end, str)	Replaces part with new text
+reverse()			Reverses the entire string
+toString()			Converts StringBuilder to String
+
+Example:
+public class Main {
+    public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder("Logic");
+        sb.append(" While");
+        System.out.println("After append: " + sb);
+        sb.insert(6, " and");
+        System.out.println("After insert: " + sb);
+        sb.replace(0, 5, "Loop");
+        System.out.println("After replace: " + sb);
+        sb.delete(4, 8);
+        System.out.println("After delete: " + sb);
+        sb.reverse();
+        System.out.println("After reverse: " + sb);
+        String finalString = sb.toString();
+        System.out.println("Final string: " + finalString);
+    }
+}
+
+
+StringBuffer class in Java:
+---------------------------
+--> Mutable (can change the content).
+--> Slower than StringBuilder (because it’s synchronized).
+--> Use it when multiple threads are modifying the string.
+--> Common methods:
+Method				Description
+---------------------------------------------------------------------
+append(str)			Adds text to the end
+insert(index, str)		Inserts text at a position
+replace(start, end, str)	Replaces part with new text
+delete(start, end)		Removes characters from start to end
+reverse()			Reverses the string
+toString()			Converts to String
+
+-->Example:
+public class Main {
+    public static void main(String[] args) {
+        StringBuffer sb = new StringBuffer("Logic");
+        sb.append(" While");
+        System.out.println("After append: " + sb);
+        sb.insert(6, " and");
+        System.out.println("After insert: " + sb);
+        sb.replace(0, 5, "Loop");
+        System.out.println("After replace: " + sb);
+        sb.delete(4, 8);
+        System.out.println("After delete: " + sb);
+        sb.reverse();
+        System.out.println("After reverse: " + sb);
+        String result = sb.toString();
+        System.out.println("Final string: " + result);
+    }
+}
+
+
+
+
+
+
